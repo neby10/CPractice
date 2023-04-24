@@ -1,6 +1,6 @@
 /*
 Author: Nicholas Eby
-Date: 4.21.2023
+Date: 4.24.2023
 Title: Binary Search
 Purpose: This program performs a binary search on a sorted array of integers to find a specific value.
 */
