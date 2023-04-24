@@ -4,7 +4,7 @@
 
 Nicholas Eby
 Date: 4.19.2023
-Purpose: To orgainze this folder of challenges as I practice my C programming abilities.
+Purpose: To practice my C programming abilities.
 
 Challenges for Programming in C
 1. FizzBuzz: Write a program that prints the numbers from 1 to 100. For multiples of three, print "fizz" instead of the number. 
