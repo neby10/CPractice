@@ -1,7 +1,6 @@
 # CPractice
  Practicing my C programming...
 
-
 Nicholas Eby
 Date: 4.19.2023
 Purpose: To practice my C programming abilities.
@@ -20,25 +19,83 @@ For multiples of five, print "buzz" instead of the number. For numbers that are 
 10. Binary Search: Write a program that performs a binary search on a sorted array of integers to find a specific value.
 
 
-Final Project
+My C Project
+Date: 4.24.2023
 Project Title: Library Management System
 Description: Create a program that manages a library's collection of books. The program should allow librarians to add new books to the collection, 
 search for books by title or author, check out books to library patrons, and keep track of due dates and late fees.
 Features:
-* A user-friendly interface for librarians and patrons to interact with the system.
 * A database of books and their information (e.g. title, author, ISBN, publication date, etc.).
 * A search function to allow patrons to find books by title or author.
-* A checkout function to allow librarians to check out books to patrons, and to track due dates and late fees.
-* An automatic system to send email reminders to patrons whose books are overdue.
-* A function to allow librarians to add new books, delete old books, update book info (categories or genres) and view book info (CRUD) to the library's collection.
-* A feature to track the library's inventory, including the number of copies of each book available.
-* Adding and deleting members
-* Keeping track of member borrowing history
+* Members can checkout, return, and search books. Member borrowing history is saved.
+* Librarians can add new books, delete old books, update book info, view book info, track member book due dates and late fees.
+* Administrator can CRUD member, librarian, and book info.
 * Updating book availability
+Extra:
+* A user-friendly interface for librarians and patrons to interact with the system.
 * The system can also generate reports on various aspects of the library => Number of books borrowed by a member, Number of books in each category, Number of books borrowed and returned, Overdue books
+* An automatic system to send email reminders to patrons whose books are overdue.
+
 
 Programming skills: data structures, algorithms, file handling, database handling, memory management, and user interface design. 
 Experience in creating a practical, real-world application that can be useful for a variety of different organizations.
 
-To build this project, you can use C programming language along with a database management system like SQLite. 
+Tools: C, SQLite3
 You can also use a GUI library like GTK or ncurses to create a user-friendly interface for library staff to interact with the system.
+
+
+
+Data Models
+
+Book
+-Title
+-Author
+-ISBN
+-Genre
+-Year Published
+-numCopies
+-availableCopies
+-Due Date
+<>Update Info
+
+Administrator
+-username
+-password
+<>add librarian
+<>delete librarian
+
+Librarian
+-username
+-password
+<>search books
+<>add new book to archive
+<>remove book from archive
+<>update book from archive
+
+Members
+-username
+-password
+<>search books
+<>check out book
+<>return book
+
+SQLite Data Types
+-Null
+-Integer
+-Text (string)
+-Real (float)
+-Blob (other form of data)
+
+
+Adding SQLite3
+-SQLite3 comes already installed on MacOS
+-Just added necessary code in main.c to create a pointer to the database and use that pointer to open and close it
+
+
+
+
+GTK - [IN PROGRESS]
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Installing jhbuild configuration at /Users/nicholaseby/.config/jhbuildrc
+Installing jhbuild custom configuration at /Users/nicholaseby/.config/jhbuildrc-custom
