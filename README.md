@@ -48,49 +48,40 @@ You can also use a GUI library like GTK or ncurses to create a user-friendly int
 Data Models
 
 Book
--Title
--Author
--ISBN
--Genre
--Year Published
--numCopies
--availableCopies
--Due Date
+-Title, Author, ISBN, Genre, Year Published, numCopies, availableCopies, Due Date
 <>Update Info
 
 Administrator
--username
--password
+-username, password
 <>add librarian
 <>delete librarian
 
 Librarian
--username
--password
+-username, password
 <>search books
 <>add new book to archive
 <>remove book from archive
 <>update book from archive
 
 Members
--username
--password
+-username, password
 <>search books
 <>check out book
 <>return book
 
-SQLite Data Types
--Null
--Integer
--Text (string)
--Real (float)
--Blob (other form of data)
 
-
-Adding SQLite3
+SQLite3
 -SQLite3 comes already installed on MacOS
 -Just added necessary code in main.c to create a pointer to the database and use that pointer to open and close it
+-main.db file is used for SQLite operations
 
+SQLite Data Types -> Null, Integer, Text (string), Real (float), Blob (other form of data)
+
+Compiling with SQLite Command
+$gcc main.c -l sqlite3
+
+Running
+$./a.out
 
 
 
@@ -99,3 +90,34 @@ To activate this project's virtualenv, run pipenv shell.
 Alternatively, run a command inside the virtualenv with pipenv run.
 Installing jhbuild configuration at /Users/nicholaseby/.config/jhbuildrc
 Installing jhbuild custom configuration at /Users/nicholaseby/.config/jhbuildrc-custom
+
+
+
+
+
+
+
+
+
+
+Sample SQL Statements..
+
+    sql = "CREATE TABLE BOOK (" \
+        "ISBN TEXT PRIMARY  KEY     NOT NULL," \
+        "TITLE              TEXT    NOT NULL," \
+        "AUTHOR             TEXT    NOT NULL," \
+        "GENRE              TEXT," \
+        "YEAR               INT     NOT NULL," \
+        "COPIES             INT     NOT NULL," \
+        "AVAILABLE          INT     NOT NULL);";
+
+    sql = "DROP TABLE COMPANY;";
+
+    sql = "INSERT INTO BOOK (ISBN, TITLE, AUTHOR, GENRE, YEAR, COPIES, AVAILABLE) " \
+        "VALUES ('9781983229282', 'Title Here', 'Nathan Metzler', 'Computer Science', 0, 1, 1);";
+
+    sql = "SELECT * FROM BOOK";
+
+    sprintf(sql, addBook("9781402709876", "Kids Quickest Comebacks", "Phillip Yates and Matt Rissinger", "Kids", 2004, 1, 1));
+
+    sql = addBook("9781402709876", "Kids Quickest Comebacks", "Phillip Yates and Matt Rissinger", "Kids", 2004, 1, 1);
